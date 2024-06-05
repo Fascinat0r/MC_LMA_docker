@@ -131,6 +131,7 @@ services:
       - minecraft-server-network
     ports:
       - "${MINECRAFT_SERVER_SERVER_PORT}:${MINECRAFT_SERVER_SERVER_PORT}"
+      - "${MINECRAFT_SERVER_RCON_PORT}:${MINECRAFT_SERVER_RCON_PORT}"
     restart: unless-stopped
 
   backups:
