@@ -87,7 +87,7 @@ services:
     image: ${MINECRAFT_SERVER_IMAGE_TAG}
     volumes:
       - minecraft-server-data:${DATA_PATH}
-      - ./plugins:/plugins:ro
+      - ./modpacks:/modpacks:ro
     environment:
       EULA: ${MINECRAFT_SERVER_EULA}
       TYPE: ${MINECRAFT_SERVER_TYPE}
@@ -122,6 +122,11 @@ services:
       WHITELIST: ${MINECRAFT_SERVER_WHITELIST}
       OPS: ${MINECRAFT_SERVER_OPS}
       TZ: ${MINECRAFT_SERVER_SERVER_TIMEZONE}
+      #NEW
+      USE_AIKAR_FLAGS: ${USE_AIKAR_FLAGS}
+      MOD_PLATFORM: MODRINTH
+      MODRINTH_MODPACK: /modpacks/LightMiddleAgesServer_0.0.4.mrpack
+      SEED: ${WORLDGEN_SEED}
     networks:
       - minecraft-server-network
     ports:
